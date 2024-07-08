@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SaldoInsuficienteException, ValorInvalidoException {
 		Cliente elania = new Cliente();
 		elania.setNome("Elania");
 		
@@ -10,11 +10,13 @@ public class Main {
 		ContaPoupanca poupanca = new ContaPoupanca(elania);
 		//IConta poupanca = new ContaPoupanca(elania);
 
-		cc.depositar(100);
+		cc.depositar(000);
 		cc.transferir(100, poupanca);
+		cc.sacar(300);
 		
 		cc.imprimirExtrato();
 		poupanca.imprimirExtrato();
+
 	}
 
 }
